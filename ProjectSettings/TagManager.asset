@@ -14,11 +14,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PortalWall
+  - Ground
+  - Pass
+  - Player
+  - CubeBullet
   - 
   - 
   - 

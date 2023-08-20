@@ -50,5 +50,5 @@
             ENDCG
         }
     }
-    Fallback "Standard" // for shadows
+    Fallback "Standard"
 }

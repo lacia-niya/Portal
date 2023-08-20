@@ -19,7 +19,6 @@
         CGPROGRAM
         // 基于物理的标准光源模型，并在所有光源类型上启用阴影
         #pragma surface surf Standard addshadow
-        // 使用着色器模型3.0目标，以获得更好的照明效果
         #pragma target 3.0
 
         sampler2D _MainTex;
@@ -47,7 +46,6 @@
             float3 offsetToSliceCentre = adjustedCentre - IN.worldPos;
             clip (dot(offsetToSliceCentre, sliceNormal));
             
-            // Albedo来自由颜色着色的纹理
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
             o.Albedo = c.rgb;
 

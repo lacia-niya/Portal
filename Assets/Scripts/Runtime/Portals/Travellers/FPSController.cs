@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 基于CharacterController的角色控制器
+/// </summary>
 public class FPSController : PortalTraveller 
 {
 
@@ -33,7 +36,6 @@ public class FPSController : PortalTraveller
 
     bool jumping;
     float lastGroundedTime;
-    bool disabled;
 
     void Start () 
     {
@@ -54,24 +56,6 @@ public class FPSController : PortalTraveller
 
     void Update () 
     {
-        if (Input.GetKeyDown (KeyCode.P)) 
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Debug.Break ();
-        }
-        if (Input.GetKeyDown (KeyCode.O)) 
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            disabled = !disabled;
-        }
-
-        if (disabled) 
-        {
-            return;
-        }
-
         Vector2 input = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 
         Vector3 inputDir = new Vector3 (input.x, 0, input.y).normalized;
@@ -106,12 +90,12 @@ public class FPSController : PortalTraveller
         float mY = Input.GetAxisRaw ("Mouse Y");
 
         // 硬hack阻止开始时相机下摆
-        float mMag = Mathf.Sqrt (mX * mX + mY * mY);
-        if (mMag > 5) 
-        {
-            mX = 0;
-            mY = 0;
-        }
+        //float mMag = Mathf.Sqrt (mX * mX + mY * mY);
+        //if (mMag > 5) 
+        //{
+        //    mX = 0;
+        //    mY = 0;
+        //}
 
         yaw += mX * mouseSensitivity;
         pitch -= mY * mouseSensitivity;

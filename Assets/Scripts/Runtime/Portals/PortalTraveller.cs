@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 可传送物体的基类，提供与传送门交互的方法
+/// </summary>
 public class PortalTraveller : MonoBehaviour 
 {
 
@@ -11,13 +14,23 @@ public class PortalTraveller : MonoBehaviour
     public Material[] originalMaterials { get; set; }
     public Material[] cloneMaterials { get; set; }
 
+    /// <summary>
+    /// 扩展如传送门子弹的初始化
+    /// </summary>
+    public virtual void Init(Portal instance)
+    {
+
+    }
+
     public virtual void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) 
     {
         transform.position = pos;
         transform.rotation = rot;
     }
 
-    // 首次接触传送门时调用
+    /// <summary>
+    /// 首次接触传送门时创建克隆体
+    /// </summary>
     public virtual void EnterPortalThreshold () 
     {
         if (graphicsClone == null) 
@@ -34,7 +47,9 @@ public class PortalTraveller : MonoBehaviour
         }
     }
 
-    // 离开传送门时调用（传送时不算离开）
+    /// <summary>
+    /// 离开传送门时调用（传送时不算离开）
+    /// </summary>
     public virtual void ExitPortalThreshold () 
     {
         graphicsClone.SetActive (false);
