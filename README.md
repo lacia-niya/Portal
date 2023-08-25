@@ -1,5 +1,5 @@
 # Portal
-具有5个解密小关卡，基于传送门和物理的demo，游玩视频和编译版本可在Release中下载
+具有5个关卡的小demo，基于传送门和物理的解密，游玩视频和编译版本可在Release中下载
 ![image](https://github.com/lacia-niya/Portal/assets/59786572/58f3f0e4-5865-46a5-addc-14770f328059)
 
 ![Recursion1](https://github.com/lacia-niya/Portal/assets/59786572/79dd8f78-cebb-4860-b12b-d17edc185cca)
